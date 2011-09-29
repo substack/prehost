@@ -2,7 +2,8 @@ prehost
 =======
 
 Parse the `/^host\s*:\s*(\S+)/i` out of an HTTP stream and report back as soon as
-possible. This is useful if you're writing something like a load manager.
+possible. This is useful if you're writing something like a load balancer or
+http host router.
 
 example
 =======

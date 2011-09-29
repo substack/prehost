@@ -1,0 +1,37 @@
+{
+    "name" : "prehost",
+    "description" : "Parse the host out of an HTTP stream and report back as soon as possible. This is useful if you're building a load balancer or http host router.",
+    "version" : "0.0.0",
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/substack/node-prehost.git"
+    },
+    "main" : "index.js",
+    "keywords" : [
+        "http",
+        "parse",
+        "pre",
+        "load",
+        "balancer"
+    ],
+    "directories" : {
+        "lib" : ".",
+        "example" : "example",
+        "test" : "test"
+    },
+    "scripts" : {
+        "test" : "tap test/*.js"
+    },
+    "devDependencies" : {
+        "tap" : "0.0.x"
+    },
+    "engines" : {
+        "node" : ">=0.4.0"
+    },
+    "license" : "MIT",
+    "author" : {
+        "name" : "James Halliday",
+        "email" : "mail@substack.net",
+        "url" : "http://substack.net"
+    }
+}
