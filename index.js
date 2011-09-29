@@ -14,7 +14,7 @@ module.exports = function () {
             
             for (var i = 0; i < buf.length; i++) {
                 if (buf[i] === newline) {
-                    if (line === '') {
+                    if (line === '' || line === '\r') {
                         cb('No "Host" HTTP header encountered.', {
                             stream : stream,
                             host : null,
