@@ -6,7 +6,7 @@ test('raw with a host', function (t) {
     t.plan(2);
     var sent = false;
     
-    var port = (Math.random() * Math.pow(2,32) - 1e4) + 1e4;
+    var port = (Math.random() * Math.pow(2,16) - 1e4) + 1e4;
     var s = prehost(function (err, req) {
         if (err) t.fail(err);
         
