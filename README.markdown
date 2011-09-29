@@ -4,6 +4,21 @@ prehost
 Parse the `/^host\s*:\s*(\S+)/i` out of an HTTP stream and report back as soon as
 possible. This is useful if you're writing something like a load manager.
 
+example
+=======
+
+````javascript
+var prehost = require('../');
+
+prehost(function (err, req) {
+    if (err) console.error('Error: ' + err)
+    else console.log('Host: ' + req.host)
+}).listen(8000);
+````
+
+Connect to the server and you'll see 'Host: ...' values get printed when you try
+to visit the service on port 8000 with curl or a browser.
+
 methods
 =======
 
