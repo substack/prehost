@@ -1,3 +1,5 @@
+var newline = '\n'.charCodeAt(0);
+
 var net = require('net');
 module.exports = function () {
     var args = [].slice.call(arguments, 0, -1);
@@ -11,7 +13,7 @@ module.exports = function () {
             bufs.push(buf);
             
             for (var i = 0; i < buf.length; i++) {
-                if (buf[i] === '\n') {
+                if (buf[i] === newline) {
                     if (line === '') {
                         cb('No "Host" HTTP header encountered.', {
                             stream : stream,
@@ -22,7 +24,7 @@ module.exports = function () {
                         break;
                     }
                     else {
-                        var m = line.match(/^host\s*:\s*(\S+)/i);
+                        var m = line.match(/^host\s*:\s*([^\r\n]+)/i);
                         if (m) {
                             var host = m[1];
                             stream.removeListener('data', listener);

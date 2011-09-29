@@ -17,9 +17,9 @@ prehost(..., cb)
 Create a new network server with the arguments in `...` and try to parse HTTP
 headers.
 
-If there is an error, `err` will be set in the response to `cb(err, res)`.
+If there is an error, `err` will be set in `cb(err, req)`.
 
-`res` is an object with the keys:
+`req` is an object with the keys:
 
 * stream - the stream object from the request
 * host - a string with the hostname, if any was detected
