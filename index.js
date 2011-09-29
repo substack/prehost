@@ -22,7 +22,7 @@ module.exports = function () {
                         break;
                     }
                     else {
-                        var m = line.match(/^host:\s*(\S+)/i);
+                        var m = line.match(/^host\s*:\s*(\S+)/i);
                         if (m) {
                             var host = m[1];
                             stream.removeListener('data', listener);
@@ -41,5 +41,5 @@ module.exports = function () {
         });
     });
     
-    net.createServer.apply(null, args);
+    return net.createServer.apply(null, args);
 };
